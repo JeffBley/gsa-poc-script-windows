@@ -1,4 +1,4 @@
-# gsa-poc-script-windows
+# GSA client PoC installation script for Windows
 GSA installation script for Windows proof of concept deployments. This script performs the following actions:
 - Detects whether the GSA client is installed already. If not, it installs the correct GSA client (ARM vs x86) depending on the detected Windows architecture.
 - Sets several registry keys which configure the following:
