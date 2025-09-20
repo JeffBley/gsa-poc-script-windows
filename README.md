@@ -330,7 +330,7 @@ $PromptForReboot = (-not $WasIpv4PreferredAlreadyCorrect) -and $NowIpv4Preferred
 
 if ($PromptForReboot) {
     # Prompt for reboot at the end ONLY if the DisabledComponents value was changed by this script
-    $choice = Read-Host "Some registry key changes won't take effect until device reboot. Do you want to reboot now? (Y/N)"
+    $choice = Read-Host "Change of the IPv4Preffered registry key won't take effect until device reboot. Do you want to reboot now? (Y/N)"
     if ($choice -match '^[Yy]$') {
         Write-Host "Rebooting system..."
         Restart-Computer -Force
