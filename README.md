@@ -217,7 +217,7 @@ if ($chromeFound) {
     Write-Host "Skipping Chrome policy keys (Chrome not detected)." -ForegroundColor DarkYellow
 }
 
-Write-Host "`nGSA keys applied. Browser policy keys applied only when detected." -ForegroundColor Cyan
+Write-Host "`nGSA keys applied. Edge and Chrome browser policy keys applied only when detected." -ForegroundColor Cyan
 
 # Firefox policies.json: disable QUIC (HTTP/3) and DoH only if Firefox present
 if ($firefoxFound) {
@@ -309,7 +309,7 @@ if ($firefoxFound) {
         $jsonOut  = $existingJson | ConvertTo-Json -Depth 10 -Compress
         $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
         [System.IO.File]::WriteAllText($destination, $jsonOut, $utf8NoBom)
-        Write-Host "Firefox policies.json updated at '$destination'." -ForegroundColor Green
+        Write-Host "QUIC and DoH disabled in Firefox. Firefox policies.json updated at '$destination'." -ForegroundColor Green
     } else {
         Write-Host "Firefox policies.json already contains required settings at '$destination'." -ForegroundColor Gray
     }
